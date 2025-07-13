@@ -1,0 +1,594 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', 'sans-serif';
+}
+
+body {
+    color: #fff;
+    background: #240046;
+    overflow: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 5%;
+    /*change*/
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2rem;
+    /*changed*/
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    filter: drop-shadow(0 0 5px #7209B7);
+}
+
+.navbar a {
+    font-size: 1rem;
+    color: #7209B7;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+}
+
+.navbar a:hover {
+    color: rgba(15, 137, 148, 0.703);
+}
+
+.main {
+    min-height: 100vh;
+    background-color: #3C096C;
+    background-size: cover;
+    background-position: center;
+    pointer-events: auto;
+    transition: .3s ease;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 200%;
+}
+
+.home {
+    position: relative;
+    left: -50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-content {
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+}
+
+.hoome-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 0, 0, .3);
+}
+
+.home-content p {
+    font-size: 1rem;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    margin-bottom: 30px;
+}
+
+.home-content .start-btn {
+    width: 100px;
+    max-width: 190px;
+    height: 55px;
+    background-color: #c40094;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #c40094;
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.home-content .start-btn:hover {
+    background: #7209B7;
+    box-shadow: none;
+}
+
+.popup-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 90%;
+    max-width: 500px;
+    background: #fff;
+    border-radius: 6px;
+    padding: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.popup-info.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-info h2 {
+    font-size: 50px;
+    color: #c40094;
+}
+
+.popup-info .info {
+    display: inline-block;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    margin: 40px 50px;
+}
+
+.popup-info .btn-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #999;
+    margin-top: 10px;
+    padding: 15px 0 7px;
+}
+
+.popup-info .btn-group .info-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 45px;
+    background: #c40094;
+    border: 2px solid #c40094;
+    outline: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.popup-info .btn-group .info-btn:nth-child(1) {
+    background: transparent;
+    color: #c40094;
+}
+
+.popup-info .btn-group .info-btn:nth-child(1):hover {
+    background: #c40094;
+    color: #fff;
+}
+
+.popup-info .btn-group .info-btn:nth-child(2) {
+    background: transparent;
+    color: #c40094;
+}
+
+.popup-info .btn-group .info-btn:nth-child(2):hover {
+    background: #c40094;
+    color: #fff;
+}
+
+.quiz-section {
+    position: relative;
+    left: -50%;
+    width: 100%;
+    background: #09001d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .8s ease-in-out;
+    transition-delay: .25s;
+    z-index: 100;
+}
+
+.quiz-section.active {
+    left: 0;
+}
+
+.quiz-section .quiz-box {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    background: transparent;
+    border: 2px solid #7209B7;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(.9);
+    transition: .3s ease;
+    /* transition-delay: 0s; */
+}
+
+.quiz-section .quiz-box.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    transition: 1s ease;
+    transition-delay: 1s;
+}
+
+.quiz-box h1 {
+    font-size: 2rem;
+    text-align: center;
+    background: linear-gradient(45deg, transparent, #c40094, transparent);
+    border-radius: 6px;
+}
+
+.quiz-box .quiz-hearde {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 2px solid #c40094;
+    margin-bottom: 30px;
+}
+
+.quiz-hearde span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.quiz-hearde .header-score {
+    background: #c40094;
+    border-radius: 3px;
+    padding: 7px;
+}
+
+.quiz-box .question-text {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.option-list .option {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 3px;
+    font-size: 17px;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.option-list .option:hover {
+    background: rgba(255, 255, 255, .1);
+    border-radius: rgba(255, 255, 255, .1);
+}
+
+.option-list .option.correct {
+    background: #240046;
+    color: #4CC9F0;
+    border-color: #4CC9F0;
+}
+
+.option-list .option.incorrect {
+    background: #240046;
+    color: #F72585;
+    border-color: #F72585;
+}
+
+.option-list .option.disable {
+    pointer-events: none;
+}
+
+.quiz-box .quiz-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #c40094;
+    padding-top: 20px;
+    margin-top: 25px;
+}
+
+.quiz-footer .question-tool {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.quiz-footer .next-btn {
+    width: 100px;
+    height: 45px;
+    /* background: rgba(255, 255, 155, .1); */
+    /* border: 2px solid rgba(255, 255, 255, .1); */
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    /* color: rgba(255, 255, 155, .3); */
+    font-weight: 600;
+    cursor: pointer;
+    /* pointer-events: none; */
+    transition: .5s;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.quiz-footer .next-btn:hover {
+    /* background: #950170;
+    background-color: #950170; */
+    background-color: #7209B7;
+    color: #fff;
+}
+
+.quiz-section .rsult-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.9);
+    width: 90%;
+    max-width: 500px;
+    background: transparent;
+    border: 2px solid #c40094;
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.quiz-section .rsult-box.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.rsult-box h2 {
+    font-size: 52px;
+}
+
+.rsult-box .percentage-container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.percentage-container .circular-progress {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    /* background: conic-gradient(#c40094 3.6deg, rgba(255, 255, 255, .1) 0deg); */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: conic-gradient(#F72585 3.6deg, rgba(255, 255, 255, .1) 0deg);
+}
+
+.percentage-container .circular-progress::before {
+    content: '';
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    /* background: #09001d; */
+    border-radius: 50%;
+    background: #240046;
+}
+
+.circular-progress .progress-value {
+    position: relative;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.percentage-container .score-text {
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.buttons button {
+    width: 100%;
+    max-width: 130px;
+    height: 47px;
+    /* background: #c40094; */
+    /* border: 2px solid #c40094; */
+    outline: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: .5s;
+    background: #F72585;
+    border: 2px solid #F72585;
+}
+
+.buttons button:nth-child(1) {
+    /* background: transparent;
+    color: #c40094; */
+    background: transparent;
+    color: #F72585;
+}
+
+.buttons button:nth-child(1):hover {
+    /* background: #c40094;
+    color: #fff; */
+    background: #F72585;
+    color: #fff;
+}
+
+.buttons button:nth-child(2) {
+    /* background: transparent;
+    color: #c40094; */
+    background: transparent;
+    color: #F72585;
+}
+
+.buttons button:nth-child(2):hover {
+    /* background: #c40094;
+    color: #fff; */
+    background: #F72585;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 5%;
+    }
+    .navbar a {
+        font-size: 16px;
+    }
+    .home-content h1 {
+        font-size: 3rem;
+        /* Smaller font for tablets */
+    }
+    .quiz-box h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 3%;
+    }
+    .navbar a {
+        font-size: 14px;
+        margin-left: 20px;
+    }
+    .home-content h1 {
+        font-size: 2.5rem;
+        /* Smaller font for mobile */
+    }
+    .home-content p {
+        font-size: 0.9rem;
+    }
+    .quiz-box h1 {
+        font-size: 1.6rem;
+    }
+    .buttons button {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+
+/* change here */
+
+
+/* (Same CSS as above, just adding responsiveness to the navbar) */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', 'sans-serif';
+}
+
+body {
+    color: #fff;
+    background: #240046;
+    overflow-x: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 5%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    filter: drop-shadow(0 0 5px #7209B7);
+}
+
+.navbar {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar a {
+    font-size: 1rem;
+    color: #7209B7;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: #F72585;
+}
+
+
+/* Hamburger Icon */
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background: #fff;
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    .navbar {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #240046;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 10px 20px;
+        display: none;
+    }
+    .navbar.active {
+        display: flex;
+    }
+    .navbar a {
+        margin: 10px 0;
+    }
+}
+
+
+/* Keep all your existing CSS as is below here */
