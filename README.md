@@ -1,6 +1,6 @@
-# 🎯 Quizyfuizy
+# 🧠🤯 BrainBuzz
 
-**Quizyfuizy** is a fun and interactive quiz web app built with HTML, CSS, and JavaScript. It helps users test their general knowledge in a vibrant, responsive, and engaging interface.
+**BrainBuzz** is a fun and interactive quiz web app built with HTML, CSS, and JavaScript. It helps users test their general knowledge in a vibrant, responsive, and engaging interface.
 
 ---
 
@@ -17,7 +17,7 @@
 
 ## 📁 Project Structure
 
-quizyfuizy/
+BrainBuzz
 ├── index.html # Main webpage
 ├── style.css # All styling and responsive design
 ├── Script.js # Quiz logic and behavior
